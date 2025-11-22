@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Astrix | Divine Oracle</title>
+  <link rel="stylesheet" href="/static/style.css?v=4">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;800&family=Outfit:wght@300;400;600&display=swap"
+    rel="stylesheet">
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+
+<body>
+  <div class="mandala-bg"></div>
+  <div class="app-layout">
+    <!-- Sidebar / Navigation -->
+    <nav class="sidebar glass-pillar">
+      <div class="brand-icon">
+        <i data-lucide="sun" style="width: 32px; height: 32px;"></i>
+      </div>
+      <button class="nav-btn active" id="navChat" aria-label="Oracle">
+        <i data-lucide="message-circle"></i>
+      </button>
+      <button class="nav-btn" id="navChart" aria-label="Cosmos">
+        <i data-lucide="star"></i>
+      </button>
+      <button class="nav-btn" id="navSettings" aria-label="Rituals">
+        <i data-lucide="flame"></i>
+      </button>
+
+      <!-- Buy Me a Coffee -->
+      <a href="https://buymeacoffee.com/gauravbatule" target="_blank" class="nav-btn" aria-label="Support"
+        style="margin-top: auto; color: var(--accent-gold);">
+        <i data-lucide="coffee"></i>
+      </a>
+    </nav>
+
+    <!-- Main Content Area -->
+    <main class="chat-section glass-pillar" id="chatSection">
+      <header class="chat-header">
+        <h1>Astrix Oracle</h1>
+        <span class="subtitle">Vedic Intelligence</span>
+      </header>
+
+      <div class="chat-thread" id="chatThread">
+        <div class="welcome-message" style="text-align: center; margin-top: 50px; opacity: 0.7;">
+          <i data-lucide="moon" style="width: 64px; height: 64px; color: var(--text-gold); margin-bottom: 20px;"></i>
+          <h2 style="font-family: 'Cinzel', serif; color: var(--text-gold);">Om Shanti</h2>
+          <p>The cosmos awaits your query.</p>
+        </div>
+        <!-- Messages injected here -->
+      </div>
+
+      <!-- Quick Actions -->
+      <div class="quick-actions" id="quickActions">
+        <button class="chip-btn" data-query="What does my career look like?">Career</button>
+        <button class="chip-btn" data-query="How is my love life?">Love</button>
+        <button class="chip-btn" data-query="What is my current Dasha?">Dasha</button>
+        <button class="chip-btn" data-query="Any health advice?">Health</button>
+      </div>
+
+      <footer class="chat-input-container">
+        <div class="input-glass-bar">
+          <button class="icon-btn" id="attachBtn"><i data-lucide="paperclip"></i></button>
+          <textarea id="chatInput" placeholder="Ask the stars..." rows="1"></textarea>
+          <button class="icon-btn" id="micBtn"><i data-lucide="mic"></i></button>
+          <button class="send-btn hidden" id="sendBtn"><i data-lucide="arrow-right"></i></button>
+        </div>
+      </footer>
+    </main>
+
+    <!-- Astral Dashboard (Right Panel) -->
+    <section class="dashboard-section glass-pillar" id="dashboardSection">
+      <div class="dashboard-header">
+        <h2>Celestial Chart</h2>
+        <div class="header-actions">
+          <button class="icon-btn" id="editBirthBtn" title="Edit Birth Details"><i data-lucide="edit-2"></i></button>
+          <button class="icon-btn close-dashboard-btn" id="closeDashboardBtn" title="Close"><i
+              data-lucide="x"></i></button>
+        </div>
+      </div>
+
+      <div class="dashboard-content">
+        <!-- Birth Details Card -->
+        <div class="card birth-card hidden" id="birthCard">
+          <div class="card-row">
+            <span class="label">Soul</span>
+            <span class="value" id="dispName">--</span>
+          </div>
+          <div class="card-row">
+            <span class="label">Arrival</span>
+            <span class="value" id="dispDate">--</span>
+          </div>
+          <div class="card-row">
+            <span class="label">Origin</span>
+            <span class="value" id="dispPlace">--</span>
+          </div>
+          <!-- Daily Horoscope Button -->
+          <button class="cta-btn" id="dailyHoroscopeBtn"
+            style="width: 100%; margin-top: 16px; background: rgba(255, 153, 51, 0.2); border: 1px solid var(--accent-saffron); color: var(--text-gold); cursor: pointer; padding: 10px; border-radius: 12px;">
+            <i data-lucide="sun" style="width: 16px; height: 16px; vertical-align: middle; margin-right: 8px;"></i>
+            Daily Insight
+          </button>
+        </div>
+
+        <!-- Chart Visualizer -->
+        <div class="chart-container" id="chartContainer">
+          <div class="empty-state" style="text-align: center; color: var(--text-muted);">
+            <i data-lucide="compass" style="width: 48px; height: 48px; margin-bottom: 10px; opacity: 0.5;"></i>
+            <p>Chart not manifested</p>
+            <button class="cta-btn" id="createChartBtn"
+              style="margin-top: 10px; background: var(--text-gold); border: none; padding: 8px 16px; border-radius: 20px; cursor: pointer;">Align
+              Stars</button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- Modal for Birth Details -->
+  <div id="birthModal" class="modal hidden">
+    <div class="modal-glass">
+      <div class="modal-header">
+        <h2>Birth Details</h2>
+        <button class="close-btn" id="closeModalBtn"
+          style="background:none; border:none; color:var(--text-gold); cursor:pointer;"><i data-lucide="x"></i></button>
+      </div>
+      <form id="birthForm" class="cosmic-form">
+        <div class="form-group">
+          <label style="color:var(--text-muted); display:block; margin-bottom:8px;">Name</label>
+          <input type="text" name="name" placeholder="Your Name" required>
+        </div>
+        <div class="form-row" style="display:flex; gap:16px;">
+          <div class="form-group" style="flex:1;">
+            <label style="color:var(--text-muted); display:block; margin-bottom:8px;">Date</label>
+            <input type="date" name="birth_date" required>
+          </div>
+          <div class="form-group" style="flex:1;">
+            <label style="color:var(--text-muted); display:block; margin-bottom:8px;">Time</label>
+            <input type="time" name="birth_time" step="1" required>
+          </div>
+        </div>
+        <div class="form-group">
+          <label style="color:var(--text-muted); display:block; margin-bottom:8px;">Location</label>
+          <div class="location-wrapper" style="position:relative;">
+            <input type="text" name="location_text" id="locationInput" placeholder="City, Country" autocomplete="off"
+              required>
+            <div id="locationSuggestions" class="suggestions-dropdown hidden"
+              style="position:absolute; top:100%; left:0; right:0; background:#1a0a0a; border:1px solid var(--text-gold); z-index:10;">
+            </div>
+          </div>
+        </div>
+        <button type="submit" class="submit-btn">Align Stars</button>
+      </form>
+    </div>
+  </div>
+
+  <div id="toast" class="toast"></div>
+
+  <script type="module" src="/static/main.js"></script>
+  <script>
+    lucide.createIcons();
+  </script>
+</body>
+
+</html>

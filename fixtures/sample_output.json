@@ -1,0 +1,96 @@
+{
+  "meta": {
+    "model": "gpt-obs-120",
+    "generated_at": "2025-01-01T00:00:00Z",
+    "inputs": {
+      "name": "Aanya Sharma",
+      "birth_date": "1995-08-15",
+      "birth_time": "10:30:00",
+      "location_text": "Mumbai, India",
+      "lat": 19.076,
+      "lon": 72.8777,
+      "time_zone": "Asia/Kolkata",
+      "precision": 4,
+      "timezone_offset_minutes": 330,
+      "timezone_source": "sample"
+    }
+  },
+  "location": {
+    "lat": 19.076,
+    "lon": 72.8777,
+    "display_name": "Mumbai, India",
+    "state": "Maharashtra",
+    "country": "India",
+    "timezone": "Asia/Kolkata"
+  },
+  "jd_info": {
+    "jd": 2449944.708333,
+    "T": -0.0438136,
+    "utc_datetime": "1995-08-15T05:00:00.000Z"
+  },
+  "planets": {
+    "Sun": {"longitude": 143.1367, "zodiac_sign": 4, "degree_in_sign": 23.1367},
+    "Moon": {"longitude": 12.2393, "zodiac_sign": 0, "degree_in_sign": 12.2393},
+    "Mercury": {"longitude": 351.8143, "zodiac_sign": 11, "degree_in_sign": 21.8143},
+    "Venus": {"longitude": 44.4309, "zodiac_sign": 1, "degree_in_sign": 14.4309},
+    "Mars": {"longitude": 260.016, "zodiac_sign": 8, "degree_in_sign": 20.016},
+    "Jupiter": {"longitude": 246.9343, "zodiac_sign": 8, "degree_in_sign": 6.9343},
+    "Saturn": {"longitude": 263.4466, "zodiac_sign": 8, "degree_in_sign": 23.4466},
+    "Rahu": {"longitude": 209.7815, "zodiac_sign": 6, "degree_in_sign": 29.7815},
+    "Ketu": {"longitude": 29.7815, "zodiac_sign": 0, "degree_in_sign": 29.7815}
+  },
+  "ascendant": {
+    "longitude": 116.557,
+    "zodiac_sign": 3,
+    "degree_in_sign": 26.557
+  },
+  "cusps": [
+    {"cusp_number": 1, "cusp_longitude": 116.557, "zodiac_sign": 3, "degree_in_sign": 26.557},
+    {"cusp_number": 2, "cusp_longitude": 146.557, "zodiac_sign": 4, "degree_in_sign": 26.557},
+    {"cusp_number": 3, "cusp_longitude": 176.557, "zodiac_sign": 5, "degree_in_sign": 26.557}
+  ],
+  "houses": {
+    "1": ["Sun"],
+    "4": ["Rahu"],
+    "5": ["Mars", "Jupiter", "Saturn"],
+    "8": ["Mercury"],
+    "9": ["Moon"],
+    "10": ["Venus", "Ketu"]
+  },
+  "kp_table": [
+    {
+      "body": "Sun",
+      "longitude": 143.1367,
+      "zodiac_sign": 4,
+      "degree_in_sign": 23.1367,
+      "nakshatra": "Purva Phalguni",
+      "pada": 3,
+      "nakshatra_lord": "Venus",
+      "sub_lord": "Jupiter",
+      "house_number": 1
+    }
+  ],
+  "vimshottari": {
+    "current": {
+      "lord": "Ketu",
+      "balance_years": 0.5744,
+      "start_jd": 2447597.746063,
+      "end_jd": 2450154.496063,
+      "start_date": "1989-03-12T05:54:20Z",
+      "end_date": "1996-03-11T23:54:20Z"
+    }
+  },
+  "wheel": {
+    "svg": "<svg ... />",
+    "canvas_instructions": [
+      {"type": "circle", "cx": 210, "cy": 210, "r": 190}
+    ]
+  },
+  "notes": [
+    "Planetary longitudes use linear mean motion approximations (not ephemeris-grade)."
+  ],
+  "logs": [
+    {"step": "JD", "value": "2449944.708333"},
+    {"step": "T", "value": "-0.04381360"}
+  ]
+}
