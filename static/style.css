@@ -405,16 +405,22 @@ body {
 
 /* Mobile */
 @media (max-width: 900px) {
+    body {
+        height: 100svh; /* Use small viewport height for mobile */
+    }
+
     .app-layout {
         flex-direction: column;
         width: 100%;
-        height: 100vh;
+        height: 100svh;
+        max-height: 100svh;
         gap: 0;
     }
 
     .sidebar {
         width: 100%;
-        height: 70px;
+        height: 60px;
+        min-height: 60px;
         flex-direction: row;
         justify-content: space-around;
         padding: 0;
@@ -422,6 +428,7 @@ body {
         background: #0a0505;
         border-top: 1px solid var(--glass-border);
         border-radius: 0;
+        flex-shrink: 0;
     }
     
     .brand-icon { display: none; }
@@ -430,6 +437,43 @@ body {
     .chat-section {
         border-radius: 0;
         border: none;
+        flex: 1;
+        min-height: 0;
+        max-height: calc(100svh - 60px);
+    }
+
+    .chat-header {
+        padding: 16px;
+        border-bottom: 1px solid rgba(218, 165, 32, 0.1);
+    }
+
+    .chat-header h1 {
+        font-size: 20px;
+        letter-spacing: 1px;
+    }
+
+    .subtitle {
+        font-size: 10px;
+        letter-spacing: 2px;
+    }
+
+    .chat-thread {
+        padding: 16px;
+        gap: 16px;
+    }
+
+    .message {
+        max-width: 85%;
+        padding: 12px 16px;
+        font-size: 14px;
+    }
+
+    .chat-input-container {
+        padding: 12px 16px;
+    }
+
+    .quick-actions {
+        padding: 0 16px 12px;
     }
 
     .dashboard-section {
@@ -439,12 +483,42 @@ body {
         inset: 0;
         z-index: 50;
         background: var(--bg-void);
+        padding: 16px;
+        overflow-y: auto;
     }
     
-    .dashboard-section.active { display: flex; }
+    .dashboard-section.active { 
+        display: flex; 
+    }
     
     .close-dashboard-btn {
         display: block; /* Visible on mobile */
+    }
+
+    .dashboard-header {
+        margin-bottom: 16px;
+    }
+
+    .dashboard-header h2 {
+        font-size: 18px;
+    }
+
+    .card {
+        padding: 16px;
+    }
+
+    .card-row {
+        font-size: 13px;
+    }
+
+    .modal-glass {
+        max-width: 90%;
+        padding: 24px;
+    }
+
+    .modal-header h2 {
+        font-size: 20px;
+        margin-bottom: 20px;
     }
 }
 

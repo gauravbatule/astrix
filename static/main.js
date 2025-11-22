@@ -121,7 +121,7 @@ function renderMessage(msg) {
   `;
   
   chatThread.appendChild(div);
-  chatThread.scrollTop = chatThread.scrollHeight;
+  // chatThread.scrollTop = chatThread.scrollHeight; // Autoscroll disabled
 }
 
 function addMessage(msg) {
@@ -138,7 +138,7 @@ function showTyping() {
   div.className = 'message assistant';
   div.innerHTML = `<span style="font-size:12px; opacity:0.7;">Consulting the stars...</span>`;
   chatThread.appendChild(div);
-  chatThread.scrollTop = chatThread.scrollHeight;
+  // chatThread.scrollTop = chatThread.scrollHeight; // Autoscroll disabled
 }
 
 function hideTyping() {
